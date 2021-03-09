@@ -1,0 +1,22 @@
+
+namespace ConsoleApp2
+{
+    class Class2
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(BasicOPer(234));
+        }
+        public static string BasicOPer(int num)
+        {
+            string digits = string.Empty;
+            while (num > 0)
+            {
+                int digit = num % 10;//4
+                digits = digits + digit + "," ;
+                num = num / 10;
+            }
+            return digits.Substring(0,digits.Length-1)+".";
+        }
+    }
+}
