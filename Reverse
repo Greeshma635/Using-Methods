@@ -1,0 +1,26 @@
+
+namespace ConsoleApp2
+{
+    class Class2
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(BasicOPer(234));
+        }
+        public static string BasicOPer(int num)
+        {
+            string rev = string.Empty;
+           // int rev = 0; 
+            
+            while (num > 0)
+            {
+                int digit = num % 10;
+
+                rev = rev  + digit+",";
+
+                num = num / 10;
+            }
+            return rev.Substring(0,rev.Length-1)+".";
+        }
+    }
+}
