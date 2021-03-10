@@ -1,0 +1,27 @@
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(AvgOfDigit(15263));
+        }
+
+        private static int  AvgOfDigit(int  num)
+        {
+            int sum = 0;
+            int count = 0;
+
+            while (num > 0)
+            {
+                int digit = num % 10;
+                sum = sum + digit;
+                count++;
+                num = num / 10;
+                
+            }
+            int avg = sum / count;
+            return avg;
+        }
+    }
+}
