@@ -1,0 +1,26 @@
+namespace ConsoleApp1
+{
+    class MFactorsSum
+    {
+        static void Main(string[] args)
+        {
+            MFactorsSum f = new MFactorsSum();
+            f.FactorsSum(12);
+
+
+        }
+        public int FactorsSum(int num)
+        {
+            int count = 0;
+            for(int i=1;i<=num;i++)
+            {
+                if(num%i==0)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
+}
+© 2021 GitHub, I
