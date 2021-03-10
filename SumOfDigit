@@ -1,0 +1,23 @@
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(SumDigit(567));
+        }
+
+        private static int SumDigit(int  num)
+        {
+            int  sum = 0;
+            while (num > 0)
+            {
+                int digit = num % 10;
+                sum = sum + digit;
+                num = num / 10;
+            }
+            return sum;
+        }
+    }
+}
