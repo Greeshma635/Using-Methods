@@ -1,0 +1,64 @@
+namespace ConsoleApp1
+{
+    class Class3
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 123, 456, 789, 210, 342, 534 };
+            Console.WriteLine(GetMaxNumber(array));
+        }
+
+        private static int GetMaxNumber(int[] array)
+        {
+            return ArrayToNum(SortArrayDesc(GetMaxDigitArray( array)));
+        }
+
+       
+
+        private static int ArrayToNum(int[] array)
+        {
+            int res = 0;
+            foreach (int i in array)
+            {
+                res = res * 10 + i;
+               
+            }
+            return res;
+
+        }
+        
+
+        private static int[] SortArrayDesc(int[] array)
+        {
+            Array.Sort(array);
+            Array.Reverse(array);
+            return array;
+
+        }
+        private static int[] GetMaxDigitArray(int[] array)
+        {
+            int[] maxdigitarray = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                maxdigitarray[i] = GetMaxDigit(array[i]);
+            }
+            return maxdigitarray;
+        }
+        private static int GetMaxDigit(int num)
+        {
+            int Max = num % 10;
+            while (num > 0)
+            {
+                int digit = num % 10;
+                if (Max<digit)
+                {
+                    Max = digit;
+                }
+                num = num / 10;
+               
+
+            }
+            return Max;
+        }
+    }
+}
